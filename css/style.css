@@ -1,0 +1,136 @@
+/* Custom overrides for Bootstrap */
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background: #fff;
+  }
+  
+  /* Parallax effect for the home section */
+  .hero {
+    background: url('../images/hero-bg.jpg') no-repeat center/cover;
+    background-attachment: fixed; /* Parallax effect */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Logo styling */
+.navbar-logo {
+    height: 40px; /* Adjust based on your logo size */
+    width: auto;
+    vertical-align: middle;
+  }
+  
+  /* Align logo and text */
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo and text */
+  }
+
+/* Gallery Images Styling */
+#gallery img {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Improved Gallery Grid Styling - Keep Original Image Dimensions */
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.gallery-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+
+/* Lightbox Modal Styling */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Ensure vertical stacking */
+  padding: 20px;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  margin: 0 auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.lightbox-overlay .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+#lightbox-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px; /* Push buttons below the image */
+}
+
+#lightbox-controls button {
+  margin: 0 10px;
+}
+  
+  /* Modal styling */
+  .modal-content {
+    background: transparent;
+    border: none;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    background: rgba(0, 0, 0, 0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* AOS animations */
+  [data-aos] {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  [data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  [data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
