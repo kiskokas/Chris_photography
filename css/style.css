@@ -1,18 +1,18 @@
 /* Custom overrides for Bootstrap */
 body {
-    font-family: 'Helvetica Neue', sans-serif;
-    background: #88978a;
-  }
-  
-  /* Parallax effect for the home section */
-  .hero {
-    background: url('../images/hero-bg.jpg') no-repeat center/cover;
-    background-attachment: fixed; /* Parallax effect */
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    position: relative;
-    z-index: 1;
-  }
+  font-family: 'Helvetica Neue', sans-serif;
+  background: #88978a;
+}
+
+/* Parallax effect for the home section */
+.hero {
+  background: url('../images/hero-bg.jpg') no-repeat center/cover;
+  background-attachment: fixed; /* Parallax effect */
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  position: relative;
+  z-index: 1;
+}
 
 /* Ensure full image visibility on mobile */
 @media (max-width: 768px) {
@@ -21,21 +21,53 @@ body {
       background-position: center top;
       background-attachment: scroll;
   }
+  #gallery {
+      grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-  /* Logo styling */
+/* Back to Top Button */
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+}
+
+#back-to-top:hover {
+  background: #444;
+}
+
+/* Logo styling */
 .navbar-logo {
-    height: 40px; /* Adjust based on your logo size */
-    width: auto;
-    vertical-align: middle;
-  }
-  
-  /* Align logo and text */
-  .navbar-brand {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Space between logo and text */
-  }
+  height: 40px; /* Adjust based on your logo size */
+  width: auto;
+  vertical-align: middle;
+}
+
+/* Align logo and text */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between logo and text */
+}
+
+#gallery {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Three equal columns */
+  gap: 10px;
+}
 
 /* Gallery Images Styling */
 #gallery img {
@@ -56,18 +88,19 @@ body {
   align-items: flex-start;
 }
 
+/* Adjust specific image placements */
 .gallery-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
 }
 
 .gallery-item img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
 }
-
 
 /* Lightbox Modal Styling */
 .lightbox-overlay {
@@ -112,34 +145,34 @@ body {
 #lightbox-controls button {
   margin: 0 10px;
 }
-  
-  /* Modal styling */
-  .modal-content {
-    background: transparent;
-    border: none;
-  }
-  
-  .carousel-control-prev,
-  .carousel-control-next {
-    background: rgba(0, 0, 0, 0.5);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  /* AOS animations */
-  [data-aos] {
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-  
-  [data-aos="fade-up"] {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  
-  [data-aos="fade-up"].aos-animate {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
+/* Modal styling */
+.modal-content {
+  background: transparent;
+  border: none;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  background: rgba(0, 0, 0, 0.5);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* AOS animations */
+[data-aos] {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+[data-aos="fade-up"] {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+[data-aos="fade-up"].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
