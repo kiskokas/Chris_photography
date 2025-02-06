@@ -14,6 +14,15 @@ body {
     z-index: 1;
   }
 
+/* Ensure full image visibility on mobile */
+@media (max-width: 768px) {
+  .hero {
+      background-size: contain;
+      background-position: center top;
+      background-attachment: scroll;
+  }
+}
+
   /* Logo styling */
 .navbar-logo {
     height: 40px; /* Adjust based on your logo size */
